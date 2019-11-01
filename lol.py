@@ -58,7 +58,7 @@ class lol_hero():
             req_img2 = self.request_hero(url2)
             if (req_img2.status_code & req_img.status_code) == 200:
                 name1 = data['skins'][0]['name'] + '-' + data['skins'][0]['heroTitle']
-                name2 = (data['skins'][j]['name'] + 'big').sub('["/:]', '-')# 替换命名规范符号
+                name2 = (data['skins'][j]['name'] + 'big').replace('"', '-').replace('/', '-').replace(':', '-')# 替换命名规范符号
                 isExists = os.path.exists(os.path.join("E:\loe", name1))
                 if not isExists:
                     print('建了一个文件夹！')
