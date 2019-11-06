@@ -3,7 +3,7 @@ import json
 import os
 
 
-class lol_hero():
+class lol_hero:
     def hero(self,hero_list_number):
         hero_data_list = []
         for i in hero_list_number:
